@@ -1,18 +1,16 @@
 #!/usr/bin/python3
 
-if __name__ == "__main__":
-    # Import the sys module to work with command-line arguments
-    import sys
+import sys
 
-    # Initialize the total to zero
+def add_arguments(argv):
+    """Calculate and print the sum of numerical arguments."""
     total = 0
+    # Start from index 1 to skip the script name (index 0).
+    for arg in argv[1:]:
+        total += int(arg)
+    print(total)
 
-    # Iterate over the command-line arguments (excluding the script name)
-    for i in range(1, len(sys.argv)):
-        # Convert each argument to an integer and add it to the total
-        total += int(sys.argv[i])
-
-    # Print the total sum of the command-line arguments
-    print("Total sum: {}".format(total))
-
+if __name__ == "__main__":
+    # Pass the command-line arguments (excluding script name) to the function.
+    add_arguments(sys.argv)
 
