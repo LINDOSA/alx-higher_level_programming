@@ -1,18 +1,16 @@
-
 #!/usr/bin/python3
 
 def magic_calculation(a, b):
-    # Import specific functions from the module "magic_calculation_102"
+    """Perform a magic calculation based on the values of a and b."""
     from magic_calculation_102 import add, sub
     
-    # Compare a and b
     if a < b:
-        # If a is less than b, perform addition operation multiple times
+        # If a is less than b, perform a series of additions
         c = add(a, b)
         for i in range(4, 6):
             c = add(c, i)
         return c
     else:
-        # If a is not less than b, perform subtraction operation
+        # If a is not less than b, perform a subtraction
         return sub(a, b)
 
