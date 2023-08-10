@@ -1,20 +1,18 @@
 #!/usr/bin/python3
 
-import sys
-
 if __name__ == "__main__":
-    # Get the number of arguments
-    num_args = len(sys.argv) - 1
+    # Import the sys module to work with command-line arguments
+    import sys
 
-    # Print the number of arguments
-    if num_args == 0:
-        print("No arguments.")
-    elif num_args == 1:
-        print("1 argument:")
-    else:
-        print("{} arguments:".format(num_args))
+    # Initialize the total to zero
+    total = 0
 
-    # Print each argument with its position
-    for i, arg in enumerate(sys.argv[1:], start=1):
-        print("{}: {}".format(i, arg))
+    # Iterate over the command-line arguments (excluding the script name)
+    for i in range(1, len(sys.argv)):
+        # Convert each argument to an integer and add it to the total
+        total += int(sys.argv[i])
+
+    # Print the total sum of the command-line arguments
+    print("Total sum: {}".format(total))
+
 
