@@ -3,7 +3,7 @@
 def magic_calculation(a, b):
     """Perform a magic calculation based on the values of a and b."""
     from magic_calculation_102 import add, sub
-    
+
     if a < b:
         # If a is less than b, perform a series of additions
         c = add(a, b)
@@ -13,4 +13,3 @@ def magic_calculation(a, b):
     else:
         # If a is not less than b, perform a subtraction
         return sub(a, b)
-

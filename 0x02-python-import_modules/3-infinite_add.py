@@ -2,6 +2,7 @@
 
 import sys
 
+
 def add_arguments(argv):
     """Calculate and print the sum of numerical arguments."""
     total = 0
@@ -10,7 +11,7 @@ def add_arguments(argv):
         total += int(arg)
     print(total)
 
+
 if __name__ == "__main__":
     # Pass the command-line arguments (excluding script name) to the function.
     add_arguments(sys.argv)
-

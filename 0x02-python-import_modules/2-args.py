@@ -21,4 +21,3 @@ if __name__ == "__main__":
     # Print each argument along with its index
     for i, arg in enumerate(arguments, start=1):
         print(f"{i}: {arg}")
-

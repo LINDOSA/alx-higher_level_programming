@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-
 import sys
 from calculator_1 import add, sub, mul, div
 
+
 def main():
+
     operators = ["+", "-", "*", "/"]
     if len(sys.argv) != 4:
         print("Usage: {} <num1> <operator> <num2>".format(sys.argv[0]))
@@ -28,7 +29,5 @@ def main():
         result = div(num1, num2)
 
     print("{:d} {} {:d} = {:d}".format(num1, operator, num2, result))
-
-if __name__ == "__main__":
-    main()
-
+    if __name__ == "__main__":
+        main()
