@@ -10,6 +10,5 @@ def no_c(my_string):
         if char != 'c' and char != 'C':
             # If not 'c' or 'C', add it to the result string
             new_string += char
-    
     # Return the new string with 'c' and 'C' characters removed
     return new_string

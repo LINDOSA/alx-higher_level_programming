@@ -10,22 +10,16 @@
  */
 listint_t *add_nodeint(listint_t **head, const int n)
 {
-    listint_t *new;
+	listint_t *new;
 
-    // Allocate memory for the new node
-    new = malloc(sizeof(listint_t));
-    if (new == NULL)
-        return (NULL);
-    new->n = n;
+	new = malloc(sizeof(listint_t));
 
-    // Link the new node to the current head of the list
-    new->next = *head;
-
-    // Update the head to point to the new node
-    *head = new;
-
-    // Return the address of the new element
-    return (new);
+	if (new == NULL)
+		return (NULL);
+	new->n = n;
+	new->next = *head;
+	*head = new;
+	return (new);
 }
 
 /**
@@ -35,36 +29,26 @@ listint_t *add_nodeint(listint_t **head, const int n)
  */
 int is_palindrome(listint_t **head)
 {
-    listint_t *head2 = *head;
-    listint_t *aux = NULL, *aux2 = NULL;
-
-    // If the list is empty or has only one element, it's considered a palindrome
-    if (*head == NULL || head2->next == NULL)
-        return (1);
-
-    // Copy the original list to a new list in reverse order
-    while (head2 != NULL)
-    {
-        add_nodeint(&aux, head2->n);
-        head2 = head2->next;
-    }
-    aux2 = aux;
-
-    // Compare the original list with the reversed list
-    while (*head != NULL)
-    {
-        if ((*head)->n != aux2->n)
-        {
-            // If the elements are not equal, free the reversed list and return 0
-            free_listint(aux);
-            return (0);
-        }
-        *head = (*head)->next;
-        aux2 = aux2->next;
-    }
-
-    // If the comparison was successful, free the reversed list and return 1
-    free_listint(aux);
-    return (1);
+	listint_t *head2 = *head;
+	listint_t *aux = NULL, *aux2 = NULL
+		if (*head == NULL || head2->next == NULL)
+			return (1);
+	while (head2 != NULL)
+	{
+		add_nodeint(&aux, head2->n);
+		head2 = head2->next;
+	}
+	aux2 = aux;
+	while (*head != NULL)
+	{
+		if ((*head)->n != aux2->n)
+		{
+			free_listint(aux);
+			return (0);
+		}
+		*head = (*head)->next;
+		aux2 = aux2->next;
+	}
+	free_listint(aux);
+	return (1);
 }
-

@@ -9,4 +9,3 @@ def max_integer(my_list=[]):
         return my_list[0]
     # Return None if the input list is empty
     return None
-

@@ -9,4 +9,3 @@ a, b = b, a
 
 # Print the swapped values
 print("a={:d} - b={:d}".format(a, b))  # Output: "a=10 - b=89"
-

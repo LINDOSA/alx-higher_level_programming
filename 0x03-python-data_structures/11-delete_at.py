@@ -15,4 +15,3 @@ def delete_at(my_list=[], idx=0):
         del my_list[idx]
     # Return the modified list, even if no deletion occurred
     return my_list
-
