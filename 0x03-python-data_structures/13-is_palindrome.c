@@ -1,54 +1,43 @@
-#include "lists.h"
-#include <stdlib.h>
-#include <stdio.h>
 
-/**
- * add_nodeint - Adds a new node at the beginning of a listint_t list.
- * @head: Pointer to the head of listint_t.
- * @n: Integer value to add to the list.
- * Return: Address of the new element, or NULL if it failed.
- */
-listint_t *add_nodeint(listint_t **head, const int n)
-{
-	listint_t *new;
 
-	new = malloc(sizeof(listint_t));
+class ListNode:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+def reverse_linked_list(head):
+    prev = None
+    current = head
 
-	if (new == NULL)
-		return (NULL);
-	new->n = n;
-	new->next = *head;
-	*head = new;
-	return (new);
-}
+    while current:
+        next_node = current.next
+        current.next = prev
+        prev = current
+        current = next_node
 
-/**
- * is_palindrome - Identifies if a singly linked list is a palindrome.
- * @head: Pointer to the head of listint_t.
- * Return: 1 if it is a palindrome, else 0.
- */
-int is_palindrome(listint_t **head)
-{
-	listint_t *head2 = *head;
-	listint_t *aux = NULL, *aux2 = NULL
-		if (*head == NULL || head2->next == NULL)
-			return (1);
-	while (head2 != NULL)
-	{
-		add_nodeint(&aux, head2->n);
-		head2 = head2->next;
-	}
-	aux2 = aux;
-	while (*head != NULL)
-	{
-		if ((*head)->n != aux2->n)
-		{
-			free_listint(aux);
-			return (0);
-		}
-		*head = (*head)->next;
-		aux2 = aux2->next;
-	}
-	free_listint(aux);
-	return (1);
-}
+    return prev
+
+def is_palindrome(head):
+	if not head or not head.next:
+
+		return True
+
+    slow = head
+    fast = head
+
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+
+    if fast:
+        slow = slow.next
+
+    reverse_head = reverse_linked_list(slow)
+    current = head
+
+    while reverse_head:
+        if current.value != reverse_head.value:
+            return False
+        current = current.next
+        reverse_head = reverse_head.next
+
+    return True
