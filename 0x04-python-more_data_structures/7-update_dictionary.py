@@ -14,4 +14,3 @@ def update_dictionary(a_dictionary, key, value):
     """
     a_dictionary[key] = value  # Assign the new value to the key
     return a_dictionary  # Return the updated dictionary
-

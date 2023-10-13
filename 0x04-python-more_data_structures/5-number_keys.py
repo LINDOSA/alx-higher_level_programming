@@ -17,4 +17,3 @@ def number_keys(a_dictionary):
         num += 1  # Increment the counter for each key
 
     return num
-

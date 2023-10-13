@@ -5,7 +5,7 @@ def weight_average(my_list=[]):
     Calculate the weighted average of a list of tuples.
 
     Args:
-        my_list (list): The input list of tuples, where each tuple contains (value, weight).
+        my_list (list): The input list of tuple.
 
     Returns:
         float: The calculated weighted average.

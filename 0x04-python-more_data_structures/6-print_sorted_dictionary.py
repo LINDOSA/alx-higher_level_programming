@@ -12,4 +12,3 @@ def print_sorted_dictionary(a_dictionary):
 
     for i in list_ord:
         print("{}: {}".format(i, a_dictionary.get(i)))  # Print key-value pairs
-

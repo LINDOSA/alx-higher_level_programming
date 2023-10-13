@@ -17,4 +17,3 @@ def multiply_by_2(a_dictionary):
         new_dir[i] *= 2  # Multiply the value by 2 for each key
 
     return new_dir  # Return the new dictionary with multiplied values
-
