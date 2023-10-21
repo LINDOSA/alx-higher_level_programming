@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-# 100-print_tebahpla.py
-
-
-for i in range(25, -1, -1):
-    print(chr(122 - i) + chr(89 - i), end="")
-print()
-
+for i in range(122, 96, -1):
+    if i % 2:
+        i = i - 32
+    print("{:c}".format(i), end="")
