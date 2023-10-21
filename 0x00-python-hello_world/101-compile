@@ -1,4 +1,3 @@
 #!/bin/bash
-# Compile the Python file into bytecode using the "compileall" module
-python3 -m compileall -b $PYFILE
-
+python3 -m compileall $PYFILE -b
+Give feedback
