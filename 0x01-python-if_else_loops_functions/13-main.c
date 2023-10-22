@@ -1,35 +1,40 @@
-nclude <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "lists.h"
+#include <stddef.h>
+
+void turn(void);
 
 /**
- * main - check the code for
+ * insert_node - Inserts a new node in a sorted linked list.
+ * @head: A pointer to a pointer to the head of the linked list.
+ * @number: The value to insert in the new node.
  *
- * Return: Always 0.
+ * Return: A pointer to the new node, or NULL on failure.
  */
-int main(void)
+listint_t *insert_node(listint_t **head, int number)
 {
-    listint_t *head;
+    listint_t *node = *head;
+    listint_t *new = malloc(sizeof(listint_t));
 
-    head = NULL;
-    add_nodeint_end(&head, 0);
-    add_nodeint_end(&head, 1);
-    add_nodeint_end(&head, 2);
-    add_nodeint_end(&head, 3);
-    add_nodeint_end(&head, 4);
-    add_nodeint_end(&head, 98);
-    add_nodeint_end(&head, 402);
-    add_nodeint_end(&head, 1024);
-    print_listint(head);
+    if (new == NULL)
+    {
+        turn(); /* Call the 'turn' function or handle the error */
+        return (NULL);
+    }
 
-    printf("-----------------\n");
+    new->n = number;
 
-    insert_node(&head, 27);
+    if (node == NULL || node->n >= number)
+    {
+        new->next = node;
+        *head = new;
+        return (new);
+    }
 
-    print_listint(head);
+    while (node && node->next && node->next->n < number)
+        node = node->next;
 
-    free_listint(head);
+    new->next = node->next;
+    node->next = new;
 
-    return (0);
+    return (new);
 }
